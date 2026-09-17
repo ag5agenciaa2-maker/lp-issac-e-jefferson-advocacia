@@ -6,7 +6,7 @@
 <title>Isaac &amp; Jefferson | Advocacia Estratégica — Santa Cruz, Rio de Janeiro</title>
 <meta name="description" content="Escritório de advocacia estratégica em Santa Cruz, Rio de Janeiro. Direito Criminal (plantão 24h), Família, Trabalhista, Previdenciário, Empresarial e Bancário. Atendimento presencial no Rio e Grande Rio e online em todo o Brasil." />
 <meta name="theme-color" content="#121212" />
-<link rel="icon" href="../assets/favicon.ico" />
+<link rel="icon" href="assets/favicon-isaac-jefferson-advocacia.ico" />
 <meta property="og:title" content="Isaac &amp; Jefferson | Advocacia Estratégica" />
 <meta property="og:description" content="Advocacia estratégica no Rio de Janeiro: criminal 24h, família, trabalhista, previdenciário, empresarial e bancário." />
 <meta property="og:type" content="website" />
@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="cookie-banner.css" />
 </head>
 <body>
 
@@ -22,7 +23,7 @@
 <header class="nav" id="navbar">
   <div class="nav__inner">
     <a href="#hero" class="nav__logo" aria-label="Isaac &amp; Jefferson Advocacia Estratégica — início">
-      <img src="../assets/logo-desktop.webp" alt="Isaac &amp; Jefferson Advocacia Estratégica" />
+      <img src="assets/logo-isaac-jefferson-advocacia-estrategica.webp" alt="Isaac &amp; Jefferson Advocacia Estratégica" />
     </a>
     <nav class="nav__links" aria-label="Navegação principal">
       <a class="nav__link" href="#dor">Por que nós</a>
@@ -30,8 +31,11 @@
       <a class="nav__link" href="#socios">Sócios</a>
       <a class="nav__link" href="#depoimentos">Depoimentos</a>
       <a class="nav__link" href="#localizacao">Onde estamos</a>
-      <a class="nav__cta" href="https://wa.me/5521993114685" target="_blank" rel="noopener"><span class="nav__dot"></span>Falar agora</a>
+      <a class="nav__cta" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener"><span class="nav__dot"></span>Falar agora</a>
     </nav>
+    <button type="button" class="nav__burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -39,43 +43,86 @@
 
   <!-- HERO EDITORIAL -->
   <section class="hero section--light" id="hero">
-    <div class="wrap">
-      <p class="eyebrow hero__kicker anim-rise">Rio de Janeiro · Santa Cruz · OAB/RJ</p>
-      <h1 class="hero__title">
-        <span class="anim-rise anim-rise--1">ISAAC</span>
-        <span class="anim-rise anim-rise--2"><span class="hero__amp">&amp;</span> JEFFERSON</span>
-      </h1>
-      <div class="hero__grid">
+    <div class="wrap hero__wrap">
+      <div class="hero__main">
+        <p class="eyebrow hero__kicker anim-rise">Rio de Janeiro · Santa Cruz · OAB/RJ</p>
+        <h1 class="hero__title">
+          <span class="anim-rise anim-rise--1">ISAAC</span>
+          <span class="anim-rise anim-rise--2"><span class="hero__amp">&amp;</span> JEFFERSON</span>
+        </h1>
         <div class="hero__copy anim-rise anim-rise--3">
           <p class="hero__tagline">Advocacia Estratégica</p>
           <p class="hero__text">Atuação técnica e humanizada em Direito Criminal, de Família, Trabalhista, Previdenciário, Empresarial e Bancário. Atendimento presencial no Rio e Grande Rio, online em todo o Brasil — com linguagem clara e acompanhamento de cada etapa.</p>
           <div class="hero__actions">
-            <a class="btn btn--solid" href="https://wa.me/5521993114685" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            <a class="btn btn--solid" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar no WhatsApp</a>
             <a class="btn btn--ghost" href="#areas">Áreas de atuação</a>
           </div>
         </div>
-        <figure class="hero__figure anim-portrait">
-          <img src="../assets/retrato-isaac.webp" alt="Sócio do escritório Isaac &amp; Jefferson Advocacia Estratégica" width="600" height="900" loading="eager" />
-          <figcaption><span class="rule"></span>Criminal 24h</figcaption>
-        </figure>
       </div>
+      <figure class="hero__figure anim-portrait">
+        <video
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          width="600"
+          height="900"
+          aria-label="Vídeo institucional do escritório Isaac & Jefferson Advocacia Estratégica">
+          <source src="assets/hero-video-isaac-jefferson.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__video-controls">
+          <button class="hero__video-ctrl" type="button" data-hero-mute aria-label="Ativar som">🔇</button>
+          <button class="hero__video-ctrl" type="button" data-hero-expand aria-label="Expandir vídeo">⤢</button>
+        </div>
+        <figcaption><span class="rule"></span>Criminal 24h</figcaption>
+      </figure>
     </div>
   </section>
 
   <!-- DOR E SOLUÇÃO -->
-  <section class="section section--dark" id="dor">
-    <div class="wrap split reveal">
-      <div>
+  <section class="section section--dark ps" id="dor">
+    <div class="wrap reveal">
+      <div class="ps__head">
         <p class="eyebrow mb-3">O momento em que você nos procura</p>
-        <h2 class="pain__title">Um problema jurídico raramente chega em horário comercial.</h2>
-        <p class="lead mb-4">Uma prisão em flagrante, uma justa causa, um benefício negado, uma guarda em disputa. O que muda o resultado é a velocidade da primeira decisão — e clareza sobre o que vem depois.</p>
-        <a class="link-underline" href="https://wa.me/5521993114685" target="_blank" rel="noopener">Atendimento urgente 24h</a>
+        <div class="ps__head-row">
+          <h2 class="pain__title">O problema não avisa a hora.</h2>
+          <p class="lead">Uma prisão em flagrante, uma justa causa, um benefício negado, uma guarda em disputa. O que muda o resultado é a velocidade da primeira decisão — e clareza sobre o que vem depois.</p>
+        </div>
       </div>
-      <div class="pain__list">
-        <div class="pain__item"><span class="pain__num">01</span><div><h3>Prisão em flagrante ou intimação</h3><p>Acompanhamento em delegacia, audiência de custódia e pedido de liberdade — nas primeiras horas, quando ainda dá para mudar o rumo.</p></div></div>
-        <div class="pain__item"><span class="pain__num">02</span><div><h3>Família em conflito</h3><p>Divórcio, guarda, pensão e inventário conduzidos com sensibilidade, priorizando acordo quando ele protege quem você quer proteger.</p></div></div>
-        <div class="pain__item"><span class="pain__num">03</span><div><h3>Trabalho e empresa em risco</h3><p>Justa causa revertida, verbas cobradas, contratos e rotinas revisados antes de virarem processo.</p></div></div>
-        <div class="pain__item"><span class="pain__num">04</span><div><h3>Benefício negado ou dívida impagável</h3><p>Aposentadoria, BPC/LOAS e auxílios; revisão de juros abusivos e defesa em busca e apreensão.</p></div></div>
+
+      <div class="ps__grid">
+        <article class="ps__card ps__card--problem">
+          <figure class="ps__figure">
+            <img src="assets/problema-crise-juridica.webp" alt="Relógio marcando meia-noite com silhueta de pessoa ao fundo, representando a urgência de um problema jurídico" width="1024" height="1024" loading="lazy" />
+          </figure>
+          <div class="ps__content">
+            <span class="ps__tag">O problema</span>
+            <h3 class="ps__title">Quando a crise chega, o tempo já está contra você.</h3>
+            <ul class="ps__list">
+              <li>Prisão em flagrante ou intimação sem orientação imediata</li>
+              <li>Família em conflito, sem clareza sobre guarda, pensão ou partilha</li>
+              <li>Justa causa aplicada sem revisão do que é justo</li>
+              <li>Benefício negado ou dívida abusiva sem quem responda por você</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ps__card ps__card--solution">
+          <figure class="ps__figure">
+            <img src="assets/solucao-atendimento-juridico.webp" alt="Mão abrindo uma porta de madeira com luz entrando, representando o caminho e a clareza de um atendimento jurídico" width="1024" height="1024" loading="lazy" />
+          </figure>
+          <div class="ps__content">
+            <span class="ps__tag ps__tag--gold">A solução</span>
+            <h3 class="ps__title">Um caminho claro, conduzido com você do início ao fim.</h3>
+            <ul class="ps__list">
+              <li>Plantão criminal 24h, com atuação nas primeiras horas</li>
+              <li>Acordos e decisões conduzidos com sensibilidade, sem perder estratégia</li>
+              <li>Revisão técnica de cada caso, antes de qualquer decisão precipitada</li>
+              <li>Acompanhamento próximo, por WhatsApp, em cada etapa do processo</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -88,163 +135,284 @@
           <p class="eyebrow mb-3">Áreas de atuação</p>
           <h2>Seis frentes, uma condução estratégica</h2>
         </div>
-        <p>Abra cada área para ver os serviços específicos que conduzimos — judicial e extrajudicialmente.</p>
+        <p>Toque em uma área para ver os serviços específicos que conduzimos — judicial e extrajudicialmente.</p>
       </div>
 
-      <div class="acc" data-accordion>
-        <div class="acc__item">
-          <button class="acc__btn" type="button" aria-expanded="false" aria-controls="area-1">
-            <span class="acc__num">01</span>
-            <span class="acc__label"><span class="acc__name">Criminal</span><span class="acc__tag">Urgência 24h</span></span>
-            <span class="acc__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="acc__panel" id="area-1" role="region">
-            <div class="acc__inner"><div class="acc__services">
-              <p><span class="acc__dash"></span>Orientação jurídica preliminar</p>
-              <p><span class="acc__dash"></span>Acompanhamento em delegacia (oitivas e depoimentos)</p>
-              <p><span class="acc__dash"></span>Análise e acompanhamento de inquérito policial</p>
-              <p><span class="acc__dash"></span>Acompanhamento de flagrante</p>
-              <p><span class="acc__dash"></span>Audiência de custódia</p>
-              <p><span class="acc__dash"></span>Defesa em processo criminal</p>
-              <p><span class="acc__dash"></span>ANPP e transação penal</p>
-              <p><span class="acc__dash"></span>Pedido de liberdade provisória</p>
-              <p><span class="acc__dash"></span>Relaxamento e revogação de prisão preventiva</p>
-              <p><span class="acc__dash"></span>Habeas corpus</p>
-              <p><span class="acc__dash"></span>Recursos criminais</p>
-              <p><span class="acc__dash"></span>Defesa em Tribunal do Júri</p>
-              <p><span class="acc__dash"></span>Defesa em medidas protetivas</p>
-              <p><span class="acc__dash"></span>Defesa em crimes sexuais</p>
-              <p><span class="acc__dash"></span>Defesa em sindicância militar</p>
-              <p><span class="acc__dash"></span>JECRIM</p>
-              <p><span class="acc__dash"></span>Reabilitação criminal</p>
-              <p><span class="acc__dash"></span>Execução penal e progressão de regime</p>
-              <p><span class="acc__dash"></span>Livramento condicional e indulto</p>
-            </div></div>
-          </div>
-        </div>
+      <div class="area-grid">
+        <button class="area-card" type="button" data-area-open="area-1" style="--area-bg: url('assets/servico-criminal.webp')">
+          <span class="area-card__bg" aria-hidden="true"></span>
+          <span class="area-card__top">
+            <span class="area-card__num">01</span>
+            <span class="area-card__tag">Urgência 24h</span>
+          </span>
+          <span class="area-card__bottom">
+            <span class="area-card__name">Criminal</span>
+            <span class="area-card__cta">Ver serviços <span aria-hidden="true">→</span></span>
+          </span>
+        </button>
 
-        <div class="acc__item">
-          <button class="acc__btn" type="button" aria-expanded="false" aria-controls="area-2">
-            <span class="acc__num">02</span>
-            <span class="acc__label"><span class="acc__name">Família e sucessões</span><span class="acc__tag">Atendimento acolhedor</span></span>
-            <span class="acc__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="acc__panel" id="area-2" role="region">
-            <div class="acc__inner"><div class="acc__services">
-              <p><span class="acc__dash"></span>Divórcio judicial e extrajudicial</p>
-              <p><span class="acc__dash"></span>Dissolução de união estável</p>
-              <p><span class="acc__dash"></span>Pensão alimentícia: ação, oferta, revisão, exoneração e execução</p>
-              <p><span class="acc__dash"></span>Guarda compartilhada e unilateral</p>
-              <p><span class="acc__dash"></span>Regulamentação de visitas</p>
-              <p><span class="acc__dash"></span>Alienação parental</p>
-              <p><span class="acc__dash"></span>Investigação, reconhecimento e negatória de paternidade</p>
-              <p><span class="acc__dash"></span>Inventário judicial e extrajudicial</p>
-              <p><span class="acc__dash"></span>Sucessões e planejamento sucessório</p>
-              <p><span class="acc__dash"></span>Testamento</p>
-              <p><span class="acc__dash"></span>Interdição e curatela</p>
-              <p><span class="acc__dash"></span>Alvará e autorização judicial</p>
-              <p><span class="acc__dash"></span>Pacto antenupcial</p>
-              <p><span class="acc__dash"></span>Partilha de bens no divórcio</p>
-            </div></div>
-          </div>
-        </div>
+        <button class="area-card" type="button" data-area-open="area-2" style="--area-bg: url('assets/servico-familia-e-sucessoes.webp')">
+          <span class="area-card__bg" aria-hidden="true"></span>
+          <span class="area-card__top">
+            <span class="area-card__num">02</span>
+            <span class="area-card__tag">Atendimento acolhedor</span>
+          </span>
+          <span class="area-card__bottom">
+            <span class="area-card__name">Família e sucessões</span>
+            <span class="area-card__cta">Ver serviços <span aria-hidden="true">→</span></span>
+          </span>
+        </button>
 
-        <div class="acc__item">
-          <button class="acc__btn" type="button" aria-expanded="false" aria-controls="area-3">
-            <span class="acc__num">03</span>
-            <span class="acc__label"><span class="acc__name">Trabalhista</span><span class="acc__tag">Empresas e trabalhadores</span></span>
-            <span class="acc__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="acc__panel" id="area-3" role="region">
-            <div class="acc__inner"><div class="acc__services">
-              <p><span class="acc__dash"></span>Consultas em legislação trabalhista</p>
-              <p><span class="acc__dash"></span>Revisão de advertências e suspensões</p>
-              <p><span class="acc__dash"></span>Orientação sobre admissão, jornada, férias, remuneração, benefícios e desligamentos</p>
-              <p><span class="acc__dash"></span>Elaboração de procedimentos internos</p>
-              <p><span class="acc__dash"></span>Análise de contratos de trabalho e PJ</p>
-              <p><span class="acc__dash"></span>Defesa de empresas em reclamações trabalhistas</p>
-              <p><span class="acc__dash"></span>Reversão de justa causa</p>
-              <p><span class="acc__dash"></span>Cálculos trabalhistas</p>
-              <p><span class="acc__dash"></span>Revisão de insalubridade e periculosidade</p>
-              <p><span class="acc__dash"></span>Horas extras</p>
-              <p><span class="acc__dash"></span>Acidente de trabalho</p>
-            </div></div>
-          </div>
-        </div>
+        <button class="area-card" type="button" data-area-open="area-3" style="--area-bg: url('assets/servico-trabalhista.webp')">
+          <span class="area-card__bg" aria-hidden="true"></span>
+          <span class="area-card__top">
+            <span class="area-card__num">03</span>
+            <span class="area-card__tag">Empresas e trabalhadores</span>
+          </span>
+          <span class="area-card__bottom">
+            <span class="area-card__name">Trabalhista</span>
+            <span class="area-card__cta">Ver serviços <span aria-hidden="true">→</span></span>
+          </span>
+        </button>
 
-        <div class="acc__item">
-          <button class="acc__btn" type="button" aria-expanded="false" aria-controls="area-4">
-            <span class="acc__num">04</span>
-            <span class="acc__label"><span class="acc__name">Previdenciário</span><span class="acc__tag">INSS e benefícios</span></span>
-            <span class="acc__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="acc__panel" id="area-4" role="region">
-            <div class="acc__inner"><div class="acc__services">
-              <p><span class="acc__dash"></span>Aposentadoria rural e urbana</p>
-              <p><span class="acc__dash"></span>LOAS / BPC</p>
-              <p><span class="acc__dash"></span>Auxílio maternidade</p>
-              <p><span class="acc__dash"></span>Auxílio doença</p>
-              <p><span class="acc__dash"></span>Auxílio acidente</p>
-              <p><span class="acc__dash"></span>Planejamento de aposentadoria</p>
-            </div></div>
-          </div>
-        </div>
+        <button class="area-card" type="button" data-area-open="area-4" style="--area-bg: url('assets/servico-previdenciario.webp')">
+          <span class="area-card__bg" aria-hidden="true"></span>
+          <span class="area-card__top">
+            <span class="area-card__num">04</span>
+            <span class="area-card__tag">INSS e benefícios</span>
+          </span>
+          <span class="area-card__bottom">
+            <span class="area-card__name">Previdenciário</span>
+            <span class="area-card__cta">Ver serviços <span aria-hidden="true">→</span></span>
+          </span>
+        </button>
 
-        <div class="acc__item">
-          <button class="acc__btn" type="button" aria-expanded="false" aria-controls="area-5">
-            <span class="acc__num">05</span>
-            <span class="acc__label"><span class="acc__name">Empresarial e contratual</span><span class="acc__tag">Empresários e profissionais</span></span>
-            <span class="acc__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="acc__panel" id="area-5" role="region">
-            <div class="acc__inner"><div class="acc__services">
-              <p><span class="acc__dash"></span>Orientação jurídica empresarial</p>
-              <p><span class="acc__dash"></span>Elaboração e revisão de contratos: prestação de serviços, fornecimento, parceria, confidencialidade e locação</p>
-              <p><span class="acc__dash"></span>Contrato social e alterações societárias</p>
-              <p><span class="acc__dash"></span>Análise de risco de vínculo empregatício em contratação PJ</p>
-              <p><span class="acc__dash"></span>Notificações extrajudiciais</p>
-              <p><span class="acc__dash"></span>Apoio em negociações</p>
-            </div></div>
-          </div>
-        </div>
+        <button class="area-card" type="button" data-area-open="area-5" style="--area-bg: url('assets/servico-empresarial.webp')">
+          <span class="area-card__bg" aria-hidden="true"></span>
+          <span class="area-card__top">
+            <span class="area-card__num">05</span>
+            <span class="area-card__tag">Empresários e profissionais</span>
+          </span>
+          <span class="area-card__bottom">
+            <span class="area-card__name">Empresarial e contratual</span>
+            <span class="area-card__cta">Ver serviços <span aria-hidden="true">→</span></span>
+          </span>
+        </button>
 
-        <div class="acc__item">
-          <button class="acc__btn" type="button" aria-expanded="false" aria-controls="area-6">
-            <span class="acc__num">06</span>
-            <span class="acc__label"><span class="acc__name">Bancário</span><span class="acc__tag">Dívidas e revisionais</span></span>
-            <span class="acc__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="acc__panel" id="area-6" role="region">
-            <div class="acc__inner"><div class="acc__services">
-              <p><span class="acc__dash"></span>Análise de contratos de empréstimo, financiamento e capital de giro</p>
-              <p><span class="acc__dash"></span>Verificação de juros e tarifas</p>
-              <p><span class="acc__dash"></span>Renegociação de dívidas</p>
-              <p><span class="acc__dash"></span>Juros abusivos</p>
-              <p><span class="acc__dash"></span>Busca e apreensão de veículos</p>
-              <p><span class="acc__dash"></span>Ações revisionais bancárias</p>
-            </div></div>
-          </div>
-        </div>
+        <button class="area-card" type="button" data-area-open="area-6" style="--area-bg: url('assets/servico-bancario.webp')">
+          <span class="area-card__bg" aria-hidden="true"></span>
+          <span class="area-card__top">
+            <span class="area-card__num">06</span>
+            <span class="area-card__tag">Dívidas e revisionais</span>
+          </span>
+          <span class="area-card__bottom">
+            <span class="area-card__name">Bancário</span>
+            <span class="area-card__cta">Ver serviços <span aria-hidden="true">→</span></span>
+          </span>
+        </button>
       </div>
     </div>
   </section>
 
+  <!-- MODAIS DE SERVIÇOS POR ÁREA -->
+  <div class="area-modal-overlay" id="areaModalOverlay"></div>
+
+  <div class="area-modal" id="area-1" data-area-modal aria-hidden="true">
+    <div class="area-modal__box">
+      <button class="area-modal__close" type="button" data-area-close aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="area-modal__content">
+        <span class="area-modal__tag">01 · Urgência 24h</span>
+        <h3 class="area-modal__title">Criminal</h3>
+        <div class="acc__services">
+          <p><span class="acc__dash"></span>Orientação jurídica preliminar</p>
+          <p><span class="acc__dash"></span>Acompanhamento em delegacia (oitivas e depoimentos)</p>
+          <p><span class="acc__dash"></span>Análise e acompanhamento de inquérito policial</p>
+          <p><span class="acc__dash"></span>Acompanhamento de flagrante</p>
+          <p><span class="acc__dash"></span>Audiência de custódia</p>
+          <p><span class="acc__dash"></span>Defesa em processo criminal</p>
+          <p><span class="acc__dash"></span>ANPP e transação penal</p>
+          <p><span class="acc__dash"></span>Pedido de liberdade provisória</p>
+          <p><span class="acc__dash"></span>Relaxamento e revogação de prisão preventiva</p>
+          <p><span class="acc__dash"></span>Habeas corpus</p>
+          <p><span class="acc__dash"></span>Recursos criminais</p>
+          <p><span class="acc__dash"></span>Defesa em Tribunal do Júri</p>
+          <p><span class="acc__dash"></span>Defesa em medidas protetivas</p>
+          <p><span class="acc__dash"></span>Defesa em crimes sexuais</p>
+          <p><span class="acc__dash"></span>Defesa em sindicância militar</p>
+          <p><span class="acc__dash"></span>JECRIM</p>
+          <p><span class="acc__dash"></span>Reabilitação criminal</p>
+          <p><span class="acc__dash"></span>Execução penal e progressão de regime</p>
+          <p><span class="acc__dash"></span>Livramento condicional e indulto</p>
+        </div>
+        <a class="btn btn--gold" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20Direito%20Criminal." target="_blank" rel="noopener">Falar sobre meu caso</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="area-modal" id="area-2" data-area-modal aria-hidden="true">
+    <div class="area-modal__box">
+      <button class="area-modal__close" type="button" data-area-close aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="area-modal__content">
+        <span class="area-modal__tag">02 · Atendimento acolhedor</span>
+        <h3 class="area-modal__title">Família e sucessões</h3>
+        <div class="acc__services">
+          <p><span class="acc__dash"></span>Divórcio judicial e extrajudicial</p>
+          <p><span class="acc__dash"></span>Dissolução de união estável</p>
+          <p><span class="acc__dash"></span>Pensão alimentícia: ação, oferta, revisão, exoneração e execução</p>
+          <p><span class="acc__dash"></span>Guarda compartilhada e unilateral</p>
+          <p><span class="acc__dash"></span>Regulamentação de visitas</p>
+          <p><span class="acc__dash"></span>Alienação parental</p>
+          <p><span class="acc__dash"></span>Investigação, reconhecimento e negatória de paternidade</p>
+          <p><span class="acc__dash"></span>Inventário judicial e extrajudicial</p>
+          <p><span class="acc__dash"></span>Sucessões e planejamento sucessório</p>
+          <p><span class="acc__dash"></span>Testamento</p>
+          <p><span class="acc__dash"></span>Interdição e curatela</p>
+          <p><span class="acc__dash"></span>Alvará e autorização judicial</p>
+          <p><span class="acc__dash"></span>Pacto antenupcial</p>
+          <p><span class="acc__dash"></span>Partilha de bens no divórcio</p>
+        </div>
+        <a class="btn btn--gold" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20Direito%20de%20Fam%C3%ADlia." target="_blank" rel="noopener">Falar sobre meu caso</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="area-modal" id="area-3" data-area-modal aria-hidden="true">
+    <div class="area-modal__box">
+      <button class="area-modal__close" type="button" data-area-close aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="area-modal__content">
+        <span class="area-modal__tag">03 · Empresas e trabalhadores</span>
+        <h3 class="area-modal__title">Trabalhista</h3>
+        <div class="acc__services">
+          <p><span class="acc__dash"></span>Consultas em legislação trabalhista</p>
+          <p><span class="acc__dash"></span>Revisão de advertências e suspensões</p>
+          <p><span class="acc__dash"></span>Orientação sobre admissão, jornada, férias, remuneração, benefícios e desligamentos</p>
+          <p><span class="acc__dash"></span>Elaboração de procedimentos internos</p>
+          <p><span class="acc__dash"></span>Análise de contratos de trabalho e PJ</p>
+          <p><span class="acc__dash"></span>Defesa de empresas em reclamações trabalhistas</p>
+          <p><span class="acc__dash"></span>Reversão de justa causa</p>
+          <p><span class="acc__dash"></span>Cálculos trabalhistas</p>
+          <p><span class="acc__dash"></span>Revisão de insalubridade e periculosidade</p>
+          <p><span class="acc__dash"></span>Horas extras</p>
+          <p><span class="acc__dash"></span>Acidente de trabalho</p>
+        </div>
+        <a class="btn btn--gold" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20Direito%20Trabalhista." target="_blank" rel="noopener">Falar sobre meu caso</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="area-modal" id="area-4" data-area-modal aria-hidden="true">
+    <div class="area-modal__box">
+      <button class="area-modal__close" type="button" data-area-close aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="area-modal__content">
+        <span class="area-modal__tag">04 · INSS e benefícios</span>
+        <h3 class="area-modal__title">Previdenciário</h3>
+        <div class="acc__services">
+          <p><span class="acc__dash"></span>Aposentadoria rural e urbana</p>
+          <p><span class="acc__dash"></span>LOAS / BPC</p>
+          <p><span class="acc__dash"></span>Auxílio maternidade</p>
+          <p><span class="acc__dash"></span>Auxílio doença</p>
+          <p><span class="acc__dash"></span>Auxílio acidente</p>
+          <p><span class="acc__dash"></span>Planejamento de aposentadoria</p>
+        </div>
+        <a class="btn btn--gold" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20Direito%20Previdenci%C3%A1rio." target="_blank" rel="noopener">Falar sobre meu caso</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="area-modal" id="area-5" data-area-modal aria-hidden="true">
+    <div class="area-modal__box">
+      <button class="area-modal__close" type="button" data-area-close aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="area-modal__content">
+        <span class="area-modal__tag">05 · Empresários e profissionais</span>
+        <h3 class="area-modal__title">Empresarial e contratual</h3>
+        <div class="acc__services">
+          <p><span class="acc__dash"></span>Orientação jurídica empresarial</p>
+          <p><span class="acc__dash"></span>Elaboração e revisão de contratos: prestação de serviços, fornecimento, parceria, confidencialidade e locação</p>
+          <p><span class="acc__dash"></span>Contrato social e alterações societárias</p>
+          <p><span class="acc__dash"></span>Análise de risco de vínculo empregatício em contratação PJ</p>
+          <p><span class="acc__dash"></span>Notificações extrajudiciais</p>
+          <p><span class="acc__dash"></span>Apoio em negociações</p>
+        </div>
+        <a class="btn btn--gold" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20Direito%20Empresarial." target="_blank" rel="noopener">Falar sobre meu caso</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="area-modal" id="area-6" data-area-modal aria-hidden="true">
+    <div class="area-modal__box">
+      <button class="area-modal__close" type="button" data-area-close aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="area-modal__content">
+        <span class="area-modal__tag">06 · Dívidas e revisionais</span>
+        <h3 class="area-modal__title">Bancário</h3>
+        <div class="acc__services">
+          <p><span class="acc__dash"></span>Análise de contratos de empréstimo, financiamento e capital de giro</p>
+          <p><span class="acc__dash"></span>Verificação de juros e tarifas</p>
+          <p><span class="acc__dash"></span>Renegociação de dívidas</p>
+          <p><span class="acc__dash"></span>Juros abusivos</p>
+          <p><span class="acc__dash"></span>Busca e apreensão de veículos</p>
+          <p><span class="acc__dash"></span>Ações revisionais bancárias</p>
+        </div>
+        <a class="btn btn--gold" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20Direito%20Banc%C3%A1rio." target="_blank" rel="noopener">Falar sobre meu caso</a>
+      </div>
+    </div>
+  </div>
+
   <!-- ENCANTAMENTO -->
-  <section class="section section--graphite" id="como-trabalhamos">
-    <div class="wrap split split--center reveal">
-      <figure class="figure-block">
-        <img src="../assets/socios-evento.webp" alt="Os sócios Isaac e Jefferson em evento com o Manual de Gestão Jurídica da Pequena Empresa" width="720" height="1280" loading="lazy" />
-        <figcaption>Formação continuada · gestão jurídica de pequenas empresas</figcaption>
-      </figure>
-      <div>
-        <p class="eyebrow mb-3">Como trabalhamos</p>
-        <h2 class="pain__title">Mais do que atuar em processos, atuamos em histórias reais.</h2>
-        <p class="lead mb-4">Cada caso recebe análise individualizada, estratégia definida em conjunto com o cliente e acompanhamento por canais digitais — contato direto, documentos e andamento do processo sem burocracia.</p>
-        <div class="stats">
-          <div><strong>5,0</strong><span>Nota média no Google</span></div>
-          <div><strong>22</strong><span>Avaliações verificadas</span></div>
-          <div><strong>24h</strong><span>Plantão criminal</span></div>
-          <div><strong>6</strong><span>Áreas de atuação</span></div>
+  <section class="section section--graphite ct" id="como-trabalhamos">
+    <div class="wrap reveal">
+      <div class="ct__layout">
+        <figure class="ct__figure">
+          <img src="assets/isaac-jefferson-advogados-lancamento-livro-gestao-juridica.webp" alt="Os sócios Isaac e Jefferson em evento com o Manual de Gestão Jurídica da Pequena Empresa" width="720" height="1280" loading="lazy" />
+          <figcaption><span class="rule"></span>Formação continuada · gestão jurídica de pequenas empresas</figcaption>
+        </figure>
+
+        <div class="ct__main">
+          <div class="ct__content">
+            <p class="eyebrow mb-3">Como trabalhamos</p>
+            <h2 class="pain__title">Mais do que atuar em processos, atuamos em histórias reais.</h2>
+            <p class="lead mb-4">Do primeiro contato à conclusão do caso, você sabe exatamente em qual etapa está — sem juridiquês e sem ficar sem resposta.</p>
+          </div>
+
+          <div class="ct__steps">
+            <div class="ct__step">
+              <span class="ct__step-num">01</span>
+              <h3>Primeira análise, sem custo</h3>
+              <p>Você conta o que aconteceu pelo WhatsApp ou presencialmente. Avaliamos o caso antes de qualquer contratação.</p>
+            </div>
+            <div class="ct__step">
+              <span class="ct__step-num">02</span>
+              <h3>Estratégia definida com você</h3>
+              <p>Leitura técnica própria, opções e prazos realistas construídos em conjunto — sem promessas vazias.</p>
+            </div>
+            <div class="ct__step">
+              <span class="ct__step-num">03</span>
+              <h3>Condução ativa, etapa por etapa</h3>
+              <p>Prazos, audiências e movimentações acompanhados de perto, com aviso a cada passo relevante.</p>
+            </div>
+            <div class="ct__step">
+              <span class="ct__step-num">04</span>
+              <h3>Contato direto, sem intermediários</h3>
+              <p>Documentos e atualizações direto pelo WhatsApp com o escritório — sem centrais de atendimento.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -258,20 +426,24 @@
           <p class="eyebrow mb-3">Sócios</p>
           <h2>Quem conduz o seu caso</h2>
         </div>
-        <p>Passe o cursor sobre cada retrato para ver nome, inscrição na OAB e frente de atuação.</p>
+        <p>Cada sócio conduz um conjunto de áreas — veja a especialidade de cada um.</p>
       </div>
       <div class="team">
         <article class="team__card">
-          <img src="../assets/retrato-isaac.webp" alt="Retrato do advogado Isaac Éderson" width="600" height="900" loading="lazy" />
-          <div class="team__overlay">
+          <span class="team__num">01</span>
+          <img src="assets/isaac-ederson-advogado-criminal-retrato-blazer-bege.webp" alt="Retrato do advogado Isaac Éderson" width="600" height="900" loading="lazy" />
+          <div class="team__veil" aria-hidden="true"></div>
+          <div class="team__panel">
             <h3>Isaac Éderson</h3>
             <p class="team__oab">OAB/RJ 244.818</p>
             <p class="team__focus">Direito Criminal e de Família — plantão de urgências, defesa em processo criminal e conflitos familiares.</p>
           </div>
         </article>
         <article class="team__card">
-          <img src="../assets/retrato-jefferson.webp" alt="Retrato do advogado Jefferson" width="600" height="900" loading="lazy" />
-          <div class="team__overlay">
+          <span class="team__num">02</span>
+          <img src="assets/jefferson-advogado-retrato-fundo-bege.webp" alt="Retrato do advogado Jefferson" width="600" height="900" loading="lazy" />
+          <div class="team__veil" aria-hidden="true"></div>
+          <div class="team__panel">
             <h3>Jefferson</h3>
             <p class="team__oab">OAB/RJ 245.227</p>
             <p class="team__focus">Direito Trabalhista, Empresarial e Previdenciário — consultoria para empresas, contratos e benefícios do INSS.</p>
@@ -281,117 +453,211 @@
     </div>
   </section>
 
-  <!-- DEPOIMENTOS -->
-  <section class="section section--dark" id="depoimentos">
-    <div class="wrap split reveal">
-      <div>
-        <p class="eyebrow mb-3">Quem já foi atendido</p>
-        <div class="rating">
-          <span class="rating__num">5,0</span>
-          <span class="rating__stars" aria-hidden="true">★★★★★</span>
+  <!-- VÍDEOS — CONTEÚDO JURÍDICO -->
+  <section class="section section--graphite vids" id="videos">
+    <div class="wrap reveal">
+      <div class="head-row">
+        <div>
+          <p class="eyebrow mb-3">Conteúdo</p>
+          <h2 class="pain__title">Direito explicado, direto ao ponto</h2>
         </div>
-        <p class="rating__count">22 avaliações no Google</p>
+        <p style="color: var(--paper-70)">Vídeos curtos do Isaac sobre situações reais do dia a dia jurídico. Toque para assistir.</p>
+      </div>
+
+      <div class="vids__track" data-vids-track>
+        <article class="vid-card" data-vid-card>
+          <div class="vid-card__frame">
+            <video class="vid-card__video" preload="none" poster="assets/poster-video-1.webp" playsinline muted loop>
+              <source src="assets/video-conteudo-1.mp4" type="video/mp4" />
+            </video>
+            <div class="vid-card__controls">
+              <button class="vid-card__ctrl" type="button" data-vid-mute aria-label="Ativar som">🔇</button>
+              <button class="vid-card__ctrl" type="button" data-vid-expand aria-label="Expandir vídeo">⤢</button>
+            </div>
+            <button class="vid-card__play" type="button" aria-label="Assistir vídeo: mitos sobre direitos trabalhistas">
+              <span class="vid-card__icon" aria-hidden="true">▶</span>
+            </button>
+          </div>
+          <p class="vid-card__label">Mitos sobre direitos trabalhistas</p>
+        </article>
+
+        <article class="vid-card" data-vid-card>
+          <div class="vid-card__frame">
+            <video class="vid-card__video" preload="none" poster="assets/poster-video-2.webp" playsinline muted loop>
+              <source src="assets/video-conteudo-2.mp4" type="video/mp4" />
+            </video>
+            <div class="vid-card__controls">
+              <button class="vid-card__ctrl" type="button" data-vid-mute aria-label="Ativar som">🔇</button>
+              <button class="vid-card__ctrl" type="button" data-vid-expand aria-label="Expandir vídeo">⤢</button>
+            </div>
+            <button class="vid-card__play" type="button" aria-label="Assistir vídeo: de quem é a responsabilidade">
+              <span class="vid-card__icon" aria-hidden="true">▶</span>
+            </button>
+          </div>
+          <p class="vid-card__label">De quem é a responsabilidade</p>
+        </article>
+
+        <article class="vid-card" data-vid-card>
+          <div class="vid-card__frame">
+            <video class="vid-card__video" preload="none" poster="assets/poster-video-3.webp" playsinline muted loop>
+              <source src="assets/video-conteudo-3.mp4" type="video/mp4" />
+            </video>
+            <div class="vid-card__controls">
+              <button class="vid-card__ctrl" type="button" data-vid-mute aria-label="Ativar som">🔇</button>
+              <button class="vid-card__ctrl" type="button" data-vid-expand aria-label="Expandir vídeo">⤢</button>
+            </div>
+            <button class="vid-card__play" type="button" aria-label="Assistir vídeo: diferença entre dois institutos jurídicos">
+              <span class="vid-card__icon" aria-hidden="true">▶</span>
+            </button>
+          </div>
+          <p class="vid-card__label">Diferença entre dois institutos jurídicos</p>
+        </article>
+
+        <article class="vid-card" data-vid-card>
+          <div class="vid-card__frame">
+            <video class="vid-card__video" preload="none" poster="assets/poster-video-4.webp" playsinline muted loop>
+              <source src="assets/video-conteudo-4.mp4" type="video/mp4" />
+            </video>
+            <div class="vid-card__controls">
+              <button class="vid-card__ctrl" type="button" data-vid-mute aria-label="Ativar som">🔇</button>
+              <button class="vid-card__ctrl" type="button" data-vid-expand aria-label="Expandir vídeo">⤢</button>
+            </div>
+            <button class="vid-card__play" type="button" aria-label="Assistir vídeo: violência doméstica não é só física">
+              <span class="vid-card__icon" aria-hidden="true">▶</span>
+            </button>
+          </div>
+          <p class="vid-card__label">Violência doméstica não é só física</p>
+        </article>
+
+        <article class="vid-card" data-vid-card>
+          <div class="vid-card__frame">
+            <video class="vid-card__video" preload="none" poster="assets/poster-video-5.webp" playsinline muted loop>
+              <source src="assets/video-conteudo-5.mp4" type="video/mp4" />
+            </video>
+            <div class="vid-card__controls">
+              <button class="vid-card__ctrl" type="button" data-vid-mute aria-label="Ativar som">🔇</button>
+              <button class="vid-card__ctrl" type="button" data-vid-expand aria-label="Expandir vídeo">⤢</button>
+            </div>
+            <button class="vid-card__play" type="button" aria-label="Assistir vídeo: o erro que pode custar um processo">
+              <span class="vid-card__icon" aria-hidden="true">▶</span>
+            </button>
+          </div>
+          <p class="vid-card__label">O erro que pode custar um processo</p>
+        </article>
+
+        <article class="vid-card" data-vid-card>
+          <div class="vid-card__frame">
+            <video class="vid-card__video" preload="none" poster="assets/poster-video-6.webp" playsinline muted loop>
+              <source src="assets/video-conteudo-6.mp4" type="video/mp4" />
+            </video>
+            <div class="vid-card__controls">
+              <button class="vid-card__ctrl" type="button" data-vid-mute aria-label="Ativar som">🔇</button>
+              <button class="vid-card__ctrl" type="button" data-vid-expand aria-label="Expandir vídeo">⤢</button>
+            </div>
+            <button class="vid-card__play" type="button" aria-label="Assistir vídeo: como funciona o divórcio">
+              <span class="vid-card__icon" aria-hidden="true">▶</span>
+            </button>
+          </div>
+          <p class="vid-card__label">Como funciona o divórcio</p>
+        </article>
+
+        <article class="vid-card" data-vid-card>
+          <div class="vid-card__frame">
+            <video class="vid-card__video" preload="none" poster="assets/poster-video-7.webp" playsinline muted loop>
+              <source src="assets/video-conteudo-7.mp4" type="video/mp4" />
+            </video>
+            <div class="vid-card__controls">
+              <button class="vid-card__ctrl" type="button" data-vid-mute aria-label="Ativar som">🔇</button>
+              <button class="vid-card__ctrl" type="button" data-vid-expand aria-label="Expandir vídeo">⤢</button>
+            </div>
+            <button class="vid-card__play" type="button" aria-label="Assistir vídeo: o que é limbo previdenciário">
+              <span class="vid-card__icon" aria-hidden="true">▶</span>
+            </button>
+          </div>
+          <p class="vid-card__label">O que é limbo previdenciário</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="section section--dark wall" id="depoimentos">
+    <div class="wrap reveal">
+      <div class="wall__head">
+        <div>
+          <p class="eyebrow mb-3">Quem já foi atendido</p>
+          <h2>O que dizem os clientes que já defendemos</h2>
+        </div>
         <div class="row-actions">
           <a class="btn btn--ghost-light" href="https://share.google/rDCIeaf4TLMOgI6k5" target="_blank" rel="noopener">Ver no Google</a>
-          <a class="btn btn--ghost-light" href="https://search.google.com/local/writereview?placeid=ChIJu7fmCWz7mwARVRnkmJY5C4g" target="_blank" rel="noopener">Avaliar o escritório</a>
         </div>
       </div>
-      <div class="quotes" data-carousel>
-        <blockquote class="quotes__slide" data-slide aria-live="polite">
-          <p class="quotes__text" data-quote-text></p>
-          <p class="quotes__name" data-quote-name></p>
-          <p class="quotes__meta" data-quote-meta></p>
-        </blockquote>
-        <div class="quotes__nav">
-          <p class="quotes__counter" data-quote-counter></p>
-          <div class="quotes__btns">
-            <button class="icon-btn" type="button" data-prev aria-label="Depoimento anterior">←</button>
-            <button class="icon-btn" type="button" data-next aria-label="Próximo depoimento">→</button>
-          </div>
-        </div>
-      </div>
+
+      <div class="wall__track" data-wall></div>
     </div>
   </section>
 
   <!-- FAQ -->
   <section class="section section--light" id="faq">
-    <div class="wrap split reveal">
-      <div>
+    <div class="wrap reveal">
+      <div class="faq__head">
         <p class="eyebrow mb-3">Dúvidas frequentes</p>
         <h2 class="pain__title">Antes de falar com um advogado</h2>
         <p class="lead" style="color:#2B2E33">Se a sua dúvida não estiver aqui, mande no WhatsApp: respondemos em linguagem simples, sem compromisso.</p>
       </div>
-      <div class="acc" data-accordion data-stagger>
+      <div class="acc faq-acc" data-accordion data-stagger>
         <div class="acc__item">
-          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-1"><span>Vocês atendem em regime de urgência, de madrugada ou no fim de semana?</span><span class="faq__icon" aria-hidden="true">+</span></button>
+          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-1"><span class="faq__num">01</span><span class="faq__q">Vocês atendem em regime de urgência, de madrugada ou no fim de semana?</span><span class="faq__icon" aria-hidden="true">+</span></button>
           <div class="acc__panel" id="faq-1" role="region"><p class="faq__answer">Sim. Demandas criminais e urgentes — flagrante, audiência de custódia, prisão preventiva — são atendidas 24 horas pelo WhatsApp (21) 99311-4685. As demais áreas seguem o horário de segunda a sexta, das 9h às 18h.</p></div>
         </div>
         <div class="acc__item">
-          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-2"><span>É possível ser atendido sem ir ao escritório?</span><span class="faq__icon" aria-hidden="true">+</span></button>
+          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-2"><span class="faq__num">02</span><span class="faq__q">É possível ser atendido sem ir ao escritório?</span><span class="faq__icon" aria-hidden="true">+</span></button>
           <div class="acc__panel" id="faq-2" role="region"><p class="faq__answer">Sim. O atendimento presencial acontece no Rio e no Grande Rio, e o atendimento online cobre todo o Brasil: reunião por vídeo, envio de documentos e acompanhamento do processo por canais digitais.</p></div>
         </div>
         <div class="acc__item">
-          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-3"><span>A primeira conversa tem custo?</span><span class="faq__icon" aria-hidden="true">+</span></button>
+          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-3"><span class="faq__num">03</span><span class="faq__q">A primeira conversa tem custo?</span><span class="faq__icon" aria-hidden="true">+</span></button>
           <div class="acc__panel" id="faq-3" role="region"><p class="faq__answer">A análise inicial do caso não tem custo. Você conta a situação, entende quais caminhos existem e só então decide contratar.</p></div>
         </div>
         <div class="acc__item">
-          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-4"><span>Quais documentos devo levar na primeira conversa?</span><span class="faq__icon" aria-hidden="true">+</span></button>
+          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-4"><span class="faq__num">04</span><span class="faq__q">Quais documentos devo levar na primeira conversa?</span><span class="faq__icon" aria-hidden="true">+</span></button>
           <div class="acc__panel" id="faq-4" role="region"><p class="faq__answer">Documento de identidade e tudo o que se relacione ao caso: contratos, contracheques, boletim de ocorrência, intimações, decisões, prints de conversas. Se não tiver nada em mãos, começamos pelo relato.</p></div>
         </div>
         <div class="acc__item">
-          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-5"><span>Quanto tempo leva um processo?</span><span class="faq__icon" aria-hidden="true">+</span></button>
+          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-5"><span class="faq__num">05</span><span class="faq__q">Quanto tempo leva um processo?</span><span class="faq__icon" aria-hidden="true">+</span></button>
           <div class="acc__panel" id="faq-5" role="region"><p class="faq__answer">Depende da área e da comarca. O que garantimos é previsibilidade: você recebe a estimativa de cada etapa e é avisado a cada movimentação relevante — sem juridiquês.</p></div>
-        </div>
-        <div class="acc__item">
-          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-6"><span>Fui demitido por justa causa. Ainda dá para reverter?</span><span class="faq__icon" aria-hidden="true">+</span></button>
-          <div class="acc__panel" id="faq-6" role="region"><p class="faq__answer">Em muitos casos sim, especialmente quando a punição foi desproporcional, sem prova ou sem gradação. O prazo para reclamar direitos trabalhistas é de dois anos após a saída, então a análise deve ser rápida.</p></div>
-        </div>
-        <div class="acc__item">
-          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-7"><span>Meu financiamento tem juros abusivos. Como saber?</span><span class="faq__icon" aria-hidden="true">+</span></button>
-          <div class="acc__panel" id="faq-7" role="region"><p class="faq__answer">Analisamos o contrato e comparamos as taxas e tarifas cobradas com as médias praticadas pelo mercado. Quando há abuso, cabe ação revisional e, em situações de busca e apreensão, defesa imediata do veículo.</p></div>
-        </div>
-        <div class="acc__item">
-          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-8"><span>Meu benefício do INSS foi negado. O que fazer agora?</span><span class="faq__icon" aria-hidden="true">+</span></button>
-          <div class="acc__panel" id="faq-8" role="region"><p class="faq__answer">Revisamos o indeferimento e o histórico de contribuições para identificar o erro — falta de documento, período não reconhecido, laudo médico insuficiente — e definimos entre novo requerimento, recurso administrativo ou ação judicial.</p></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- LOCALIZAÇÃO -->
-  <section class="local section--light" id="localizacao">
-    <div class="wrap reveal">
-      <div class="local__grid">
-        <div class="local__info">
-          <p class="eyebrow mb-3">Onde estamos</p>
-          <h2>Santa Cruz, Rio de Janeiro</h2>
-          <dl class="local__rows">
-            <div>
-              <dt>Endereço</dt>
-              <dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Gen.+Ol%C3%ADmpio%2C+74A+-+Santa+Cruz%2C+Rio+de+Janeiro+-+RJ%2C+23510-242" target="_blank" rel="noopener">R. Gen. Olímpio, 74A — sl 201 e 202<br />Santa Cruz, Rio de Janeiro — RJ, 23510-242</a></dd>
-            </div>
-            <div>
-              <dt>Telefone e WhatsApp</dt>
-              <dd><a class="local__phone" href="https://wa.me/5521993114685" target="_blank" rel="noopener">(21) 99311-4685</a></dd>
-            </div>
-            <div>
-              <dt>Horário</dt>
-              <dd>Criminal e urgências: 24 horas<br />Demais áreas: seg. a sex., 9h às 18h</dd>
-            </div>
-            <div>
-              <dt>Atendimento</dt>
-              <dd>Presencial no Rio e Grande Rio · online em todo o Brasil</dd>
-            </div>
-          </dl>
-          <div class="row-actions">
-            <a class="btn btn--solid btn--sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Gen.+Ol%C3%ADmpio%2C+74A+-+Santa+Cruz%2C+Rio+de+Janeiro+-+RJ%2C+23510-242" target="_blank" rel="noopener">Como chegar</a>
-            <a class="btn btn--ghost btn--sm" href="https://www.instagram.com/ij.advocacia" target="_blank" rel="noopener">Instagram</a>
-            <a class="btn btn--ghost btn--sm" href="https://share.google/rDCIeaf4TLMOgI6k5" target="_blank" rel="noopener">Perfil no Google</a>
-          </div>
+  <section class="local" id="localizacao">
+    <div class="local__map">
+      <iframe title="Mapa do escritório Isaac &amp; Jefferson Advocacia Estratégica" src="https://maps.google.com/maps?q=R.%20Gen.%20Ol%C3%ADmpio%2C%2074A%20-%20Santa%20Cruz%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2023510-242&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="local__card reveal">
+      <p class="eyebrow mb-3">Onde estamos</p>
+      <h2>Santa Cruz, Rio de Janeiro</h2>
+      <dl class="local__rows">
+        <div>
+          <dt>Endereço</dt>
+          <dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Gen.+Ol%C3%ADmpio%2C+74A+-+Santa+Cruz%2C+Rio+de+Janeiro+-+RJ%2C+23510-242" target="_blank" rel="noopener">R. Gen. Olímpio, 74A — Santa Cruz, RJ</a></dd>
         </div>
-        <div class="local__map">
-          <iframe title="Mapa do escritório Isaac &amp; Jefferson Advocacia Estratégica" src="https://maps.google.com/maps?q=R.%20Gen.%20Ol%C3%ADmpio%2C%2074A%20-%20Santa%20Cruz%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2023510-242&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div>
+          <dt>WhatsApp</dt>
+          <dd><a class="local__phone" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">(21) 99311-4685</a></dd>
         </div>
+        <div>
+          <dt>Horário</dt>
+          <dd>Criminal: 24h · Demais: seg-sex, 9h-18h</dd>
+        </div>
+        <div>
+          <dt>Atendimento</dt>
+          <dd>Presencial (Rio) e online (Brasil)</dd>
+        </div>
+      </dl>
+      <div class="row-actions">
+        <a class="btn btn--solid btn--sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Gen.+Ol%C3%ADmpio%2C+74A+-+Santa+Cruz%2C+Rio+de+Janeiro+-+RJ%2C+23510-242" target="_blank" rel="noopener">Como chegar</a>
       </div>
     </div>
   </section>
@@ -403,9 +669,14 @@
         <p class="eyebrow mb-3">Fale com o escritório</p>
         <h2 class="cta__title">Conte o seu caso.<br />A primeira análise é nossa.</h2>
         <p class="lead mb-4">Descreva a situação em poucas linhas. Retornamos com os próximos passos possíveis e o que precisa ser feito primeiro.</p>
-        <a class="link-underline" href="https://wa.me/5521993114685" target="_blank" rel="noopener">Prefere WhatsApp? (21) 99311-4685</a>
+        <ul class="cta__trust">
+          <li>Resposta em até 1 dia útil</li>
+          <li>Sem compromisso</li>
+          <li>Sigilo total</li>
+        </ul>
+        <a class="link-underline" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20conversar%20sobre%20meu%20caso." target="_blank" rel="noopener">Prefere WhatsApp? (21) 99311-4685</a>
       </div>
-      <form class="form" id="form-contato" novalidate>
+      <form class="form form--card" id="form-contato" novalidate>
         <label>
           <span class="form__label">Nome completo</span>
           <input type="text" name="nome" autocomplete="name" placeholder="Como devemos te chamar" required />
@@ -417,7 +688,7 @@
           <span class="form__error" data-error-for="telefone"></span>
         </label>
         <label>
-          <span class="form__label">Área do seu caso</span>
+          <span class="form__label">Área Jurídica</span>
           <select name="area" required>
             <option value="">Selecione</option>
             <option value="Criminal">Criminal</option>
@@ -430,7 +701,7 @@
           <span class="form__error" data-error-for="area"></span>
         </label>
         <label>
-          <span class="form__label">Resumo do caso</span>
+          <span class="form__label">Descrição do caso</span>
           <textarea name="mensagem" rows="4" placeholder="O que aconteceu e desde quando" required></textarea>
           <span class="form__error" data-error-for="mensagem"></span>
         </label>
@@ -446,17 +717,8 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <img class="footer__logo" src="../assets/logo-desktop.webp" alt="Isaac &amp; Jefferson Advocacia Estratégica" />
+        <img class="footer__logo" src="assets/logo-isaac-jefferson-advocacia-estrategica.webp" alt="Isaac &amp; Jefferson Advocacia Estratégica" />
         <p class="footer__about">Escritório de advocacia estratégica no Rio de Janeiro. Atuação judicial e extrajudicial, presencial e online.</p>
-      </div>
-      <div>
-        <p class="footer__title">Contato</p>
-        <div class="footer__list">
-          <a class="footer__contact" href="https://share.google/rDCIeaf4TLMOgI6k5" target="_blank" rel="noopener"><i aria-hidden="true">◆</i>Isaac &amp; Jefferson Advocacia Estratégica</a>
-          <a class="footer__contact" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Gen.+Ol%C3%ADmpio%2C+74A+-+Santa+Cruz%2C+Rio+de+Janeiro+-+RJ%2C+23510-242" target="_blank" rel="noopener"><i aria-hidden="true">⌖</i>R. Gen. Olímpio, 74A — sl 201 e 202, Santa Cruz, Rio de Janeiro — RJ, 23510-242</a>
-          <a class="footer__contact" href="https://wa.me/5521993114685" target="_blank" rel="noopener"><i aria-hidden="true">✆</i>(21) 99311-4685 — telefone e WhatsApp</a>
-          <a class="footer__contact" href="https://www.instagram.com/ij.advocacia" target="_blank" rel="noopener"><i aria-hidden="true">◎</i>@ij.advocacia</a>
-        </div>
       </div>
       <div>
         <p class="footer__title">Navegar</p>
@@ -475,15 +737,68 @@
         <p class="footer__oab">Jefferson — OAB/RJ 245.227</p>
         <p class="footer__disclaimer">Conteúdo meramente informativo, em conformidade com o Código de Ética e Disciplina da OAB.</p>
       </div>
+      <div>
+        <p class="footer__title">Contato</p>
+        <div class="footer__list">
+          <a class="footer__contact" href="https://share.google/rDCIeaf4TLMOgI6k5" target="_blank" rel="noopener"><i aria-hidden="true">◆</i>Isaac &amp; Jefferson Advocacia Estratégica</a>
+          <a class="footer__contact" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Gen.+Ol%C3%ADmpio%2C+74A+-+Santa+Cruz%2C+Rio+de+Janeiro+-+RJ%2C+23510-242" target="_blank" rel="noopener"><i aria-hidden="true">⌖</i>R. Gen. Olímpio, 74A — sl 201 e 202, Santa Cruz, Rio de Janeiro — RJ, 23510-242</a>
+          <a class="footer__contact" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener"><i aria-hidden="true">✆</i>(21) 99311-4685 — telefone e WhatsApp</a>
+          <a class="footer__contact" href="https://www.instagram.com/ij.advocacia" target="_blank" rel="noopener"><i aria-hidden="true">◎</i>@ij.advocacia</a>
+        </div>
+      </div>
     </div>
     <div class="credits">
       <p>© Isaac &amp; Jefferson Advocacia Estratégica 2026</p>
-      <p>Desenvolvido por <a href="https://www.ag5agencia.com.br" target="_blank" rel="noopener">AG5</a> Agência</p>
+      <div class="credits__right">
+        <a href="#" id="ck-prefs-link" class="credits__cookie-link">
+          <span class="credits__cookie-icon" id="cookie-toggle" aria-hidden="true">
+            <span class="credits__cookie-check">✓</span>
+            <span class="credits__cookie-x">✕</span>
+            <span class="credits__cookie-dot"></span>
+          </span>
+          Cookies
+        </a>
+        <a href="termos-e-condicoes.html" class="credits__legal-link">Termos e Condições</a>
+        <a href="politica-de-privacidade.html" class="credits__legal-link">Política de Privacidade</a>
+        <p>Desenvolvido por <a href="https://www.ag5agencia.com.br" target="_blank" rel="noopener">AG5</a> Agência</p>
+      </div>
     </div>
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/5521993114685" target="_blank" rel="noopener">Falar agora</a>
+<!-- WhatsApp Premium Experience -->
+<div class="wa-premium-container">
+  <div id="wa-message-bubble" class="wa-bubble">
+    <button class="wa-close" id="wa-close-btn" aria-label="Fechar balão de mensagem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="14" height="14" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="wa-content">
+      <div class="wa-header">
+        <div class="wa-avatar-wrapper">
+          <img src="assets/avatar-logo-isaac-jefferson.webp" alt="Isaac &amp; Jefferson Advocacia" class="wa-avatar" width="48" height="48">
+        </div>
+        <div class="wa-info">
+          <span class="wa-name">Isaac &amp; Jefferson Advocacia</span>
+        </div>
+      </div>
+      <div id="wa-typing" class="wa-typing">
+        <span></span><span></span><span></span>
+      </div>
+      <div id="wa-real-message" class="wa-message-text" style="display:none;">
+        <p>Olá! Estamos à disposição para esclarecer suas dúvidas. <strong>Atendimento humanizado.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica."
+     class="wa-float-btn" target="_blank" rel="noopener noreferrer"
+     id="wa-main-btn" aria-label="Fale conosco pelo WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="30" height="30">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="wa-badge" id="wa-notification" aria-hidden="true">1</span>
+  </a>
+</div>
 
 <script type="application/ld+json">
 {
@@ -511,6 +826,133 @@
 }
 </script>
 
+<!-- DRAWER MOBILE -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__head">
+    <a href="#hero" class="drawer__logo" aria-label="Isaac &amp; Jefferson Advocacia Estratégica — início">
+      <img src="assets/logo-isaac-jefferson-advocacia-estrategica.webp" alt="Isaac &amp; Jefferson Advocacia Estratégica" />
+    </a>
+    <button type="button" class="drawer__close" id="drawerClose" aria-label="Fechar menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="drawer__nav" aria-label="Navegação mobile">
+    <a class="drawer__link" href="#dor">Por que nós</a>
+    <a class="drawer__link" href="#areas">Áreas</a>
+    <a class="drawer__link" href="#socios">Sócios</a>
+    <a class="drawer__link" href="#depoimentos">Depoimentos</a>
+    <a class="drawer__link" href="#localizacao">Onde estamos</a>
+  </nav>
+  <a class="drawer__cta" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener"><span class="nav__dot"></span>Falar agora</a>
+</aside>
+
+<!-- ========== COOKIE BANNER (LGPD) ========== -->
+<div id="ck-banner" class="ck-banner" role="dialog" aria-modal="true" aria-label="Aviso de cookies" aria-live="polite" aria-hidden="true">
+  <div class="ck-banner__inner">
+    <div class="ck-banner__content">
+      <h2 class="ck-banner__title">Valorizamos sua privacidade</h2>
+      <p class="ck-banner__text">
+        Utilizamos cookies para aprimorar sua experiência de navegação, exibir conteúdo
+        personalizado e analisar nosso tráfego. Ao clicar em <strong>"Aceitar todos"</strong>,
+        você concorda com nosso uso de cookies conforme nossa
+        <a href="politica-de-privacidade.html" class="ck-banner__link">Política de Privacidade</a>.
+      </p>
+    </div>
+    <div class="ck-banner__actions">
+      <button id="ck-customize" class="ck-btn ck-btn--ghost">Personalizar</button>
+      <button id="ck-reject" class="ck-btn ck-btn--outline">Rejeitar</button>
+      <button id="ck-accept-all" class="ck-btn ck-btn--primary">Aceitar todos</button>
+    </div>
+  </div>
+</div>
+
+<div id="ck-modal" class="ck-modal" role="dialog" aria-modal="true" aria-label="Personalizar preferências de cookies" aria-hidden="true">
+  <div class="ck-modal__overlay" id="ck-modal-overlay"></div>
+  <div class="ck-modal__box">
+    <div class="ck-modal__header">
+      <h2 class="ck-modal__title">Personalizar preferências de consentimento</h2>
+      <button class="ck-modal__close" id="ck-modal-close" aria-label="Fechar modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+    <div class="ck-modal__body">
+      <p class="ck-modal__intro">
+        Utilizamos cookies para ajudar você a navegar com eficiência e executar certas funções.
+        Os cookies classificados como <strong>"Necessário"</strong> são essenciais para o
+        funcionamento básico do site e não podem ser desativados.
+      </p>
+      <div class="ck-category">
+        <div class="ck-category__header">
+          <div class="ck-category__info">
+            <h3 class="ck-category__name">Necessário</h3>
+            <p class="ck-category__desc">Essenciais para o funcionamento do site. Não armazenam dados pessoalmente identificáveis.</p>
+          </div>
+          <span class="ck-category__badge">Sempre ativo</span>
+        </div>
+      </div>
+      <div class="ck-category">
+        <div class="ck-category__header">
+          <div class="ck-category__info">
+            <h3 class="ck-category__name">Funcional</h3>
+            <p class="ck-category__desc">Ajudam a executar funcionalidades como compartilhamento em mídia social e recursos de terceiros.</p>
+          </div>
+          <label class="ck-toggle" aria-label="Ativar cookies funcionais">
+            <input type="checkbox" id="ck-functional" name="functional">
+            <span class="ck-toggle__slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="ck-category">
+        <div class="ck-category__header">
+          <div class="ck-category__info">
+            <h3 class="ck-category__name">Analítico</h3>
+            <p class="ck-category__desc">Usados para entender como os visitantes interagem com o site (visitantes, taxa de rejeição, etc.).</p>
+          </div>
+          <label class="ck-toggle" aria-label="Ativar cookies analíticos">
+            <input type="checkbox" id="ck-analytics" name="analytics">
+            <span class="ck-toggle__slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="ck-category">
+        <div class="ck-category__header">
+          <div class="ck-category__info">
+            <h3 class="ck-category__name">Desempenho</h3>
+            <p class="ck-category__desc">Analisam índices de desempenho do site para oferecer melhor experiência ao visitante.</p>
+          </div>
+          <label class="ck-toggle" aria-label="Ativar cookies de desempenho">
+            <input type="checkbox" id="ck-performance" name="performance">
+            <span class="ck-toggle__slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="ck-category">
+        <div class="ck-category__header">
+          <div class="ck-category__info">
+            <h3 class="ck-category__name">Publicidade</h3>
+            <p class="ck-category__desc">Entregam anúncios personalizados com base nas páginas visitadas anteriormente.</p>
+          </div>
+          <label class="ck-toggle" aria-label="Ativar cookies de publicidade">
+            <input type="checkbox" id="ck-advertising" name="advertising">
+            <span class="ck-toggle__slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="ck-modal__footer">
+      <button id="ck-modal-reject" class="ck-btn ck-btn--outline">Rejeitar</button>
+      <button id="ck-modal-save" class="ck-btn ck-btn--ghost">Salvar Preferências</button>
+      <button id="ck-modal-accept-all" class="ck-btn ck-btn--primary">Aceitar todos</button>
+    </div>
+  </div>
+</div>
+
+<button id="ck-prefs-btn" class="ck-prefs-btn" aria-label="Preferências de cookies" style="display:none;">Cookies</button>
+
+<script src="cookie-banner.js" defer></script>
 <script src="script.js" defer></script>
 </body>
 </html>

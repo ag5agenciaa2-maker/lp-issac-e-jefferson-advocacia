@@ -22,6 +22,40 @@
     onScroll();
   }
 
+  /* ---------- 1b. Drawer mobile (menu hambúrguer) ---------- */
+  const burger = document.getElementById("navBurger");
+  const drawer = document.getElementById("drawer");
+  const drawerOverlay = document.getElementById("drawerOverlay");
+  const drawerClose = document.getElementById("drawerClose");
+
+  if (burger && drawer && drawerOverlay) {
+    const openDrawer = () => {
+      drawer.classList.add("is-open");
+      drawerOverlay.classList.add("is-open");
+      drawer.setAttribute("aria-hidden", "false");
+      burger.setAttribute("aria-expanded", "true");
+      document.body.classList.add("drawer-open");
+    };
+
+    const closeDrawer = () => {
+      drawer.classList.remove("is-open");
+      drawerOverlay.classList.remove("is-open");
+      drawer.setAttribute("aria-hidden", "true");
+      burger.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("drawer-open");
+    };
+
+    burger.addEventListener("click", openDrawer);
+    drawerClose?.addEventListener("click", closeDrawer);
+    drawerOverlay.addEventListener("click", closeDrawer);
+    drawer.querySelectorAll(".drawer__link, .drawer__cta").forEach((link) => {
+      link.addEventListener("click", closeDrawer);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && drawer.classList.contains("is-open")) closeDrawer();
+    });
+  }
+
   /* ---------- 2. Acordeões (áreas e FAQ) ---------- */
   document.querySelectorAll("[data-accordion]").forEach((acc) => {
     const items = Array.from(acc.querySelectorAll(".acc__item"));
@@ -61,6 +95,106 @@
     if (!acc.hasAttribute("data-stagger") && items[0]) open(items[0]);
   });
 
+  /* ---------- 2a. Áreas de atuação: modais de serviços por card ---------- */
+  const areaOverlay = document.getElementById("areaModalOverlay");
+  const areaCards = document.querySelectorAll("[data-area-open]");
+  const areaModals = document.querySelectorAll("[data-area-modal]");
+
+  if (areaOverlay && areaCards.length && areaModals.length) {
+    let activeModal = null;
+
+    const closeAreaModal = () => {
+      if (!activeModal) return;
+      activeModal.classList.remove("is-open");
+      activeModal.setAttribute("aria-hidden", "true");
+      areaOverlay.classList.remove("is-open");
+      document.body.classList.remove("area-modal-open");
+      activeModal = null;
+    };
+
+    const openAreaModal = (id) => {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      closeAreaModal();
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      areaOverlay.classList.add("is-open");
+      document.body.classList.add("area-modal-open");
+      activeModal = modal;
+    };
+
+    areaCards.forEach((card) => {
+      card.addEventListener("click", () => openAreaModal(card.getAttribute("data-area-open")));
+    });
+    areaModals.forEach((modal) => {
+      modal.querySelector("[data-area-close]")?.addEventListener("click", closeAreaModal);
+    });
+    areaOverlay.addEventListener("click", closeAreaModal);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && activeModal) closeAreaModal();
+    });
+  }
+
+  /* ---------- 2c. Vídeos de conteúdo: play/pause, som e expandir por card ---------- */
+  const vidCards = document.querySelectorAll("[data-vid-card]");
+  if (vidCards.length) {
+    let currentCard = null;
+
+    const stopCard = (card) => {
+      const video = card.querySelector(".vid-card__video");
+      video.pause();
+      card.classList.remove("is-playing");
+    };
+
+    vidCards.forEach((card) => {
+      const video = card.querySelector(".vid-card__video");
+      const playBtn = card.querySelector(".vid-card__play");
+      const muteBtn = card.querySelector("[data-vid-mute]");
+      const expandBtn = card.querySelector("[data-vid-expand]");
+
+      playBtn.addEventListener("click", () => {
+        if (currentCard && currentCard !== card) stopCard(currentCard);
+        video.muted = false;
+        video.play().catch(() => {});
+        card.classList.add("is-playing");
+        muteBtn.textContent = "🔊";
+        currentCard = card;
+      });
+
+      muteBtn.addEventListener("click", () => {
+        video.muted = !video.muted;
+        muteBtn.textContent = video.muted ? "🔇" : "🔊";
+      });
+
+      expandBtn.addEventListener("click", () => {
+        if (video.requestFullscreen) video.requestFullscreen();
+        else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+      });
+
+      video.addEventListener("ended", () => stopCard(card));
+    });
+  }
+
+  /* ---------- 2b. Hero: glow dourado quando o vídeo começa a tocar ---------- */
+  const heroVideo = document.querySelector(".hero__video");
+  if (heroVideo) {
+    const figure = heroVideo.closest(".hero__figure");
+    heroVideo.addEventListener("playing", () => figure.classList.add("is-glowing"), { once: true });
+    // fallback: se o vídeo não carregar (sem fonte ainda), mantém só o poster, sem glow
+    heroVideo.addEventListener("error", () => figure.classList.remove("is-glowing"));
+
+    const heroMuteBtn = document.querySelector("[data-hero-mute]");
+    const heroExpandBtn = document.querySelector("[data-hero-expand]");
+    heroMuteBtn?.addEventListener("click", () => {
+      heroVideo.muted = !heroVideo.muted;
+      heroMuteBtn.textContent = heroVideo.muted ? "🔇" : "🔊";
+    });
+    heroExpandBtn?.addEventListener("click", () => {
+      if (heroVideo.requestFullscreen) heroVideo.requestFullscreen();
+      else if (heroVideo.webkitRequestFullscreen) heroVideo.webkitRequestFullscreen();
+    });
+  }
+
   /* ---------- 3. Carrossel de depoimentos (fade + translateX) ---------- */
   const QUOTES = [
     { name: "Samuel André", when: "há um ano", text: "O Dr. Isaac Éderson é muito atencioso e atento aos mínimos detalhes, faz seu trabalho com muita competência e honestidade. Ele atua com excelência na área criminal e familiar." },
@@ -76,59 +210,23 @@
     { name: "Kim Felipe", when: "há um ano", text: "Ótimo profissional!" }
   ];
 
-  const carousel = document.querySelector("[data-carousel]");
-  if (carousel) {
-    const slide = carousel.querySelector("[data-slide]");
-    const elText = carousel.querySelector("[data-quote-text]");
-    const elName = carousel.querySelector("[data-quote-name]");
-    const elMeta = carousel.querySelector("[data-quote-meta]");
-    const elCount = carousel.querySelector("[data-quote-counter]");
-    const pad = (n) => String(n).padStart(2, "0");
-    let i = 0;
-    let busy = false;
-    let timer = null;
-
-    const paint = () => {
-      const q = QUOTES[i];
-      elText.textContent = "“" + q.text + "”";
-      elName.textContent = q.name;
-      elMeta.textContent = q.when + " · Avaliação 5★ no Google";
-      elCount.textContent = pad(i + 1) + " / " + pad(QUOTES.length);
-    };
-
-    const step = (dir) => {
-      if (busy) return;
-      i = (i + dir + QUOTES.length) % QUOTES.length;
-      if (reduced) { paint(); return; }
-      busy = true;
-      slide.classList.add("is-out");
-      setTimeout(() => {
-        paint();
-        slide.classList.remove("is-out");
-        busy = false;
-      }, 220);
-    };
-
-    const autoplay = () => {
-      clearInterval(timer);
-      timer = setInterval(() => step(1), 7000);
-    };
-
-    paint();
-    carousel.querySelector("[data-prev]").addEventListener("click", () => { step(-1); autoplay(); });
-    carousel.querySelector("[data-next]").addEventListener("click", () => { step(1); autoplay(); });
-    carousel.addEventListener("mouseenter", () => clearInterval(timer));
-    carousel.addEventListener("mouseleave", autoplay);
-
-    // inicia o autoplay somente quando a seção entra na viewport
-    if ("IntersectionObserver" in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => (e.isIntersecting ? autoplay() : clearInterval(timer)));
-      }, { threshold: 0.3 });
-      io.observe(carousel);
-    } else {
-      autoplay();
-    }
+  const wall = document.querySelector("[data-wall]");
+  if (wall) {
+    const cardHTML = (q) => `
+      <figure class="wall__card">
+        <span class="wall__quote-mark" aria-hidden="true">“</span>
+        <blockquote class="wall__text">${q.text}</blockquote>
+        <figcaption class="wall__foot">
+          <span class="wall__stars" aria-hidden="true">★★★★★</span>
+          <span class="wall__name">${q.name}</span>
+          <span class="wall__when">${q.when}</span>
+        </figcaption>
+      </figure>
+    `;
+    wall.innerHTML = `
+      <div class="wall__seq">${QUOTES.map(cardHTML).join("")}</div>
+      <div class="wall__seq" aria-hidden="true">${QUOTES.map(cardHTML).join("")}</div>
+    `;
   }
 
   /* ---------- 4. Revelação no scroll (IntersectionObserver) ---------- */
@@ -224,13 +322,102 @@
         return;
       }
       const f = form.elements;
-      const msg =
-        "Olá! Sou " + f.nome.value.trim() + " (" + f.telefone.value + "). " +
-        "Área: " + f.area.value + ". " + f.mensagem.value.trim();
+      let msg = "Olá, me chamo " + f.nome.value.trim() + ", vim através do site e gostaria de uma informação.\n";
+      msg += "\n- Telefone: " + f.telefone.value.trim();
+      msg += "\n- Área Jurídica: " + f.area.value;
+      if (f.mensagem.value.trim()) msg += "\n- Descrição do caso: " + f.mensagem.value.trim();
       window.open(WA + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
       success.textContent = "Tudo certo — abrimos o WhatsApp com o seu resumo. Se não abrir, chame no (21) 99311-4685.";
       success.classList.add("is-shown");
       form.reset();
     });
   }
+})();
+
+/* ──────────────────────────────────────────────
+   WHATSAPP PREMIUM — Balão flutuante (AG5 V4)
+
+   Timeline:
+     • t=0s  → usuário chega na 3ª seção (areas) → botão verde aparece imediatamente
+     • t=25s → balão sobe ("digitando..." por 2.5s → mensagem real)
+     • t=40s → balão some automaticamente (visível por 15s)
+
+   Nicho rigoroso (advocacia — OAB Provimento 205/2021): MODO_COMPLIANCE = true,
+   sem badge de notificação e sem "Online agora".
+─────────────────────────────────────────────── */
+(function initWaPremium() {
+  const MODO_COMPLIANCE = true; // advocacia = nicho rigoroso → sem badge
+
+  const bubble        = document.getElementById('wa-message-bubble');
+  const typing        = document.getElementById('wa-typing');
+  const realMessage   = document.getElementById('wa-real-message');
+  const badge         = document.getElementById('wa-notification');
+  const closeBtn      = document.getElementById('wa-close-btn');
+  const mainBtn       = document.getElementById('wa-main-btn');
+  const targetSection = document.getElementById('areas');
+
+  if (!bubble || !typing || !realMessage || !closeBtn || !mainBtn || !targetSection) return;
+
+  const DELAY_BALAO            = 25000;
+  const DURATION_TYPING        = 2500;
+  const DURATION_BALAO_VISIVEL = 15000;
+  const DELAY_BADGE_APOS_SUMIR = 5000;
+
+  let triggered = false;
+  let autoHideTimer = null;
+  let badgeTimer = null;
+  let userClosed = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        mainBtn.classList.add('visible');
+
+        setTimeout(() => {
+          if (userClosed) return;
+          bubble.classList.add('show');
+
+          setTimeout(() => {
+            if (userClosed) return;
+            typing.classList.add('is-hidden');
+            realMessage.classList.add('is-visible');
+            requestAnimationFrame(() => realMessage.classList.add('is-in'));
+          }, DURATION_TYPING);
+
+          autoHideTimer = setTimeout(() => {
+            if (userClosed) return;
+            bubble.classList.remove('show');
+
+            if (!MODO_COMPLIANCE && badge) {
+              badgeTimer = setTimeout(() => {
+                if (userClosed) return;
+                badge.classList.add('show');
+              }, DELAY_BADGE_APOS_SUMIR);
+            }
+          }, DURATION_BALAO_VISIVEL);
+        }, DELAY_BALAO);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(targetSection);
+
+  closeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    userClosed = true;
+    bubble.classList.remove('show');
+    if (autoHideTimer) clearTimeout(autoHideTimer);
+    if (badgeTimer) clearTimeout(badgeTimer);
+    if (!MODO_COMPLIANCE && badge) {
+      setTimeout(() => { badge.classList.add('show'); }, DELAY_BADGE_APOS_SUMIR);
+    }
+  });
+
+  mainBtn.addEventListener('click', () => {
+    bubble.classList.remove('show');
+    if (badge) badge.classList.remove('show');
+    if (autoHideTimer) clearTimeout(autoHideTimer);
+    if (badgeTimer) clearTimeout(badgeTimer);
+  });
 })();
