@@ -1244,6 +1244,7 @@ body.area-modal-open { overflow: hidden; }
 .form__submit { justify-self: stretch; margin-top: 8px; }
 .form__success { display: none; font-size: 14px; line-height: 1.6; color: var(--gold); max-width: 46ch; }
 .form__success.is-shown { display: block; }
+#contato { padding: clamp(40px, 5vw, 64px) 0; }
 .form--card {
   background: var(--paper);
   border: 0;
