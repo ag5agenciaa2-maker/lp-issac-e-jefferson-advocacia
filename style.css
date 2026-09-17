@@ -1191,6 +1191,17 @@ body.area-modal-open { overflow: hidden; }
 .local__card .row-actions { gap: 10px; }
 
 /* ---------- formulário ---------- */
+.cta__quote {
+  margin: clamp(32px, 4vw, 44px) 0 0;
+  padding: clamp(20px, 2.4vw, 26px) clamp(22px, 2.6vw, 28px);
+  border-left: 2px solid var(--gold);
+  background: rgba(246, 245, 241, 0.03);
+  max-width: 46ch;
+}
+.cta__quote-mark { display: block; margin-bottom: 6px; font-family: var(--font-display); font-size: 34px; line-height: 1; color: var(--gold); }
+.cta__quote blockquote { margin: 0 0 12px; font-size: 14.5px; line-height: 1.6; color: var(--paper-82); text-wrap: pretty; }
+.cta__quote figcaption { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--paper-70); }
+.cta__quote-stars { color: var(--gold); letter-spacing: 0.1em; margin-right: 6px; }
 .cta__trust {
   display: flex;
   flex-wrap: wrap;
