@@ -942,22 +942,33 @@ body.area-modal-open { overflow: hidden; }
 
 .team__dots {
   position: absolute;
-  bottom: clamp(22px, 3vw, 32px);
+  bottom: clamp(38px, 5vw, 48px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
   display: flex;
+  align-items: center;
   gap: 8px;
+  transition: opacity 300ms ease;
 }
+.team__card:hover .team__dots,
+.team__card:focus-within .team__dots { opacity: 0; }
 .team__dots button {
+  display: block;
   position: relative;
-  width: 6px;
-  height: 6px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 7px;
+  height: 7px;
+  margin: 0;
+  padding: 0;
   border: none;
   border-radius: 50%;
-  background-color: var(--paper-30);
+  background-color: rgba(246, 245, 241, 0.55);
   transition: background-color 300ms ease, transform 300ms ease;
   cursor: default;
+  appearance: none;
+  -webkit-appearance: none;
 }
 .team__dots button.is-active { background-color: var(--gold); transform: scale(1.3); }
 /* Accessibility fix: touch target minimo 44x44px via pseudo-elemento invisivel, sem alterar o layout visual dos dots */
@@ -966,9 +977,6 @@ body.area-modal-open { overflow: hidden; }
   position: absolute;
   inset: -19px;
 }
-.team__card:hover .team__dots,
-.team__card:focus-within .team__dots { opacity: 0; }
-
 .team__num {
   position: absolute;
   top: clamp(18px, 2.4vw, 26px);
