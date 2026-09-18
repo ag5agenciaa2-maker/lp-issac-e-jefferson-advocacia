@@ -16,7 +16,7 @@
         expiryDays: 365,                             // Dias até expirar o consentimento
         bannerDelay: 600,                            // ms antes de mostrar o banner
         showFloatingBtn: false,                      // Mostrar botão flutuante após fechar (Padrão AG5: link no rodapé)
-        privacyPolicyUrl: 'politica-de-privacidade.html', // URL da política de privacidade
+        privacyPolicyUrl: '/politica-de-privacidade', // URL da política de privacidade
     };
 
     /* ============================================================

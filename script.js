@@ -140,10 +140,12 @@
   if (vidCards.length) {
     let currentCard = null;
 
-    const stopCard = (card) => {
+    const stopCard = (card, reset) => {
       const video = card.querySelector(".vid-card__video");
       video.pause();
+      if (reset) video.currentTime = 0;
       card.classList.remove("is-playing");
+      if (currentCard === card) currentCard = null;
     };
 
     vidCards.forEach((card) => {
@@ -153,7 +155,7 @@
       const expandBtn = card.querySelector("[data-vid-expand]");
 
       playBtn.addEventListener("click", () => {
-        if (currentCard && currentCard !== card) stopCard(currentCard);
+        if (currentCard && currentCard !== card) stopCard(currentCard, true);
         video.muted = false;
         video.play().catch(() => {});
         card.classList.add("is-playing");
@@ -171,8 +173,18 @@
         else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
       });
 
-      video.addEventListener("ended", () => stopCard(card));
+      video.addEventListener("ended", () => stopCard(card, true));
     });
+
+    const videosSection = document.getElementById("videos");
+    if (videosSection && "IntersectionObserver" in window) {
+      const sectionIo = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting && currentCard) stopCard(currentCard, true);
+        });
+      }, { threshold: 0 });
+      sectionIo.observe(videosSection);
+    }
   }
 
   /* ---------- 2b. Hero: glow dourado quando o vídeo começa a tocar ---------- */
@@ -327,7 +339,7 @@
       msg += "\n- Área Jurídica: " + f.area.value;
       if (f.mensagem.value.trim()) msg += "\n- Descrição do caso: " + f.mensagem.value.trim();
       window.open(WA + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
-      success.textContent = "Tudo certo — abrimos o WhatsApp com o seu resumo. Se não abrir, chame no (21) 99311-4685.";
+      success.textContent = "Tudo certo. Abrimos o WhatsApp com o seu resumo. Se não abrir, chame no (21) 99311-4685.";
       success.classList.add("is-shown");
       form.reset();
     });

@@ -2,3 +2,25 @@ User-agent: *
 Allow: /
 Disallow: /Docs/
 Disallow: /docs/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://issacejefferson.ag5agencia.site/sitemap.xml
+
+# LLMs: https://issacejefferson.ag5agencia.site/llms.txt
