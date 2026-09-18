@@ -15,7 +15,9 @@
 <link rel="icon" href="assets/favicon-isaac-jefferson-advocacia.ico" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<!-- PageSpeed fix: async-load do Google Fonts (elimina render-blocking) -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="cookie-banner.css" />
 <style>
@@ -42,7 +44,7 @@
 <header class="nav" id="navbar">
   <div class="nav__inner">
     <a href="/#hero" class="nav__logo" aria-label="Isaac &amp; Jefferson Advocacia Estratégica, início">
-      <img src="assets/logo-isaac-jefferson-advocacia-estrategica.webp" alt="Isaac &amp; Jefferson Advocacia Estratégica" />
+      <img src="assets/logo-isaac-jefferson-advocacia-estrategica.webp" alt="Isaac &amp; Jefferson Advocacia Estratégica" width="400" height="190" />
     </a>
     <nav class="nav__links" aria-label="Navegação principal">
       <a class="nav__link" href="/#hero">Início</a>
@@ -50,7 +52,7 @@
       <a class="nav__link" href="/#como-trabalhamos">Sobre</a>
       <a class="nav__link" href="/#depoimentos">Depoimento</a>
       <a class="nav__link" href="/#contato">Contato</a>
-      <a class="nav__cta" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener"><span class="nav__dot"></span>Falar agora</a>
+      <a class="nav__cta" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" aria-label="Falar agora pelo WhatsApp – menu principal"><span class="nav__dot"></span>Falar agora</a>
     </nav>
     <button type="button" class="nav__burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
       <span></span><span></span><span></span>
@@ -75,7 +77,7 @@
         <h2>2. Quem somos</h2>
         <p><strong>Isaac &amp; Jefferson Advocacia Estratégica</strong> é um escritório de advocacia com atuação em Direito Criminal, Direito de Família, Direito Trabalhista, Direito Previdenciário, Direito Empresarial e Direito Bancário, com sede em:</p>
         <p>R. Gen. Olímpio, 74A, sl 201 e 202, Santa Cruz, Rio de Janeiro, RJ, CEP 23510-242.</p>
-        <p>Contato: <a href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener">(21) 99311-4685</a> (telefone e WhatsApp).</p>
+        <p>Contato: <a href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener noreferrer">(21) 99311-4685</a> (telefone e WhatsApp).</p>
 
         <h2>3. Quais dados coletamos</h2>
         <p>Podemos coletar os seguintes dados quando você interage com o site:</p>
@@ -117,7 +119,7 @@
           <li>Revogar o consentimento a qualquer momento;</li>
           <li>Solicitar a portabilidade dos dados, quando aplicável.</li>
         </ul>
-        <p>Para exercer esses direitos, entre em contato pelo WhatsApp <a href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener">(21) 99311-4685</a>.</p>
+        <p>Para exercer esses direitos, entre em contato pelo WhatsApp <a href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener noreferrer">(21) 99311-4685</a>.</p>
 
         <h2>8. Segurança dos dados</h2>
         <p>Adotamos medidas técnicas e organizacionais razoáveis para proteger os dados pessoais coletados contra acessos não autorizados, perda, alteração ou destruição. Nenhum sistema, porém, é totalmente livre de riscos, e nos comprometemos a agir prontamente em caso de incidente de segurança.</p>
@@ -131,7 +133,7 @@
         <h2>11. Contato</h2>
         <p>Em caso de dúvidas sobre esta Política de Privacidade ou sobre o tratamento de seus dados pessoais, entre em contato:</p>
         <ul>
-          <li>WhatsApp: <a href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener">(21) 99311-4685</a></li>
+          <li>WhatsApp: <a href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener noreferrer">(21) 99311-4685</a></li>
           <li>Endereço: R. Gen. Olímpio, 74A, sl 201 e 202, Santa Cruz, Rio de Janeiro, RJ, 23510-242</li>
         </ul>
 
@@ -145,10 +147,10 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <img class="footer__logo" src="assets/logo-isaac-jefferson-advocacia-estrategica.webp" alt="Isaac &amp; Jefferson Advocacia Estratégica" />
+        <img class="footer__logo" src="assets/logo-isaac-jefferson-advocacia-estrategica.webp" alt="Isaac &amp; Jefferson Advocacia Estratégica" width="400" height="190" loading="lazy" />
         <p class="footer__about">Escritório de advocacia estratégica no Rio de Janeiro. Atuação judicial e extrajudicial, presencial e online.</p>
         <div class="footer__social">
-          <a href="https://www.instagram.com/ij.advocacia" target="_blank" rel="noopener" aria-label="Instagram">
+          <a href="https://www.instagram.com/ij.advocacia" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none" /></svg>
           </a>
         </div>
@@ -177,17 +179,17 @@
       <div>
         <p class="footer__title">Contato</p>
         <div class="footer__list">
-          <a class="footer__contact" href="https://share.google/rDCIeaf4TLMOgI6k5" target="_blank" rel="noopener">
+          <a class="footer__contact" href="https://share.google/rDCIeaf4TLMOgI6k5" target="_blank" rel="noopener noreferrer">
             <svg class="footer__contact-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 21V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v16" /><path d="M15 21V10a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v11" /><path d="M9 8h.01M9 12h.01M9 16h.01" /><path d="M2 21h20" /></svg>
             Isaac &amp; Jefferson Advocacia Estratégica
           </a>
-          <a class="footer__contact" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Gen.+Ol%C3%ADmpio%2C+74A+-+Santa+Cruz%2C+Rio+de+Janeiro+-+RJ%2C+23510-242" target="_blank" rel="noopener">
+          <a class="footer__contact" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Gen.+Ol%C3%ADmpio%2C+74A+-+Santa+Cruz%2C+Rio+de+Janeiro+-+RJ%2C+23510-242" target="_blank" rel="noopener noreferrer">
             <svg class="footer__contact-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
             R. Gen. Olímpio, 74A, sl 201 e 202, Santa Cruz, Rio de Janeiro, RJ, 23510-242
           </a>
-          <a class="footer__contact" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">
+          <a class="footer__contact" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer">
             <svg class="footer__contact-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.06h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.14 8.14 0 0 1-1.26-4.33c0-4.51 3.67-8.18 8.19-8.18a8.15 8.15 0 0 1 8.16 8.19c0 4.51-3.67 8.19-8.1 8.19Zm4.48-6.13c-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.97-.14.16-.29.18-.53.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.44-1.35-1.68-.14-.24-.02-.37.11-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.24-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.16 1.73 2.64 4.2 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z" /></svg>
-            (21) 99311-4685, telefone e WhatsApp
+            (21) 99311-4685
           </a>
         </div>
       </div>
@@ -209,7 +211,7 @@
         </div>
       </div>
       <div class="credits__right">
-        <p>Desenvolvido por <a href="https://www.ag5agencia.com.br" target="_blank" rel="noopener">AG5</a> Agência</p>
+        <p>Desenvolvido por <a href="https://www.ag5agencia.com.br" target="_blank" rel="noopener noreferrer">AG5</a> Agência</p>
       </div>
     </div>
   </div>
@@ -220,7 +222,7 @@
 <aside class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer__head">
     <a href="/#hero" class="drawer__logo" aria-label="Isaac &amp; Jefferson Advocacia Estratégica, início">
-      <img src="assets/logo-isaac-jefferson-advocacia-estrategica.webp" alt="Isaac &amp; Jefferson Advocacia Estratégica" />
+      <img src="assets/logo-isaac-jefferson-advocacia-estrategica.webp" alt="Isaac &amp; Jefferson Advocacia Estratégica" width="400" height="190" />
     </a>
     <button type="button" class="drawer__close" id="drawerClose" aria-label="Fechar menu">
       <span></span><span></span>
@@ -233,7 +235,7 @@
     <a class="drawer__link" href="/#depoimentos">Depoimento</a>
     <a class="drawer__link" href="/#contato">Contato</a>
   </nav>
-  <a class="drawer__cta" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener"><span class="nav__dot"></span>Falar agora</a>
+  <a class="drawer__cta" href="https://wa.me/5521993114685?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" aria-label="Falar agora pelo WhatsApp – menu mobile"><span class="nav__dot"></span>Falar agora</a>
 </aside>
 
 <!-- ========== COOKIE BANNER (LGPD) ========== -->

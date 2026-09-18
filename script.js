@@ -135,6 +135,23 @@
     });
   }
 
+  /* ---------- 2b-1. Sócios: mini-carrossel automático de fotos por card ---------- */
+  document.querySelectorAll("[data-team-carousel]").forEach((card) => {
+    const slides = Array.from(card.querySelectorAll(".team__slides img"));
+    const dots = Array.from(card.querySelectorAll(".team__dots button"));
+    if (slides.length < 2) return;
+    let index = 0;
+    setInterval(() => {
+      slides[index].classList.remove("is-active");
+      dots[index]?.classList.remove("is-active");
+      dots[index]?.setAttribute("aria-selected", "false");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("is-active");
+      dots[index]?.classList.add("is-active");
+      dots[index]?.setAttribute("aria-selected", "true");
+    }, 6000);
+  });
+
   /* ---------- 2c. Vídeos de conteúdo: play/pause, som e expandir por card ---------- */
   const vidCards = document.querySelectorAll("[data-vid-card]");
   if (vidCards.length) {
@@ -261,23 +278,26 @@
     }, 1200);
 
     // stagger das perguntas do FAQ (60ms entre itens)
+    // PageSpeed fix: usa classList em vez de style inline em loop (evita forced reflow)
     const faqAcc = document.querySelector("[data-stagger]");
     if (faqAcc) {
       const items = Array.from(faqAcc.querySelectorAll(".acc__item"));
-      items.forEach((el) => { el.style.opacity = "0"; el.style.transform = "translateY(25px)"; });
+      faqAcc.classList.add("js-stagger");
       const faqIo = new IntersectionObserver((entries, obs) => {
         entries.forEach((e) => {
           if (!e.isIntersecting) return;
           obs.unobserve(e.target);
           items.forEach((el, idx) => {
-            el.style.transition = "opacity 450ms ease-out " + idx * 60 + "ms, transform 450ms ease-out " + idx * 60 + "ms";
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
+            setTimeout(() => el.classList.add("is-revealed"), idx * 60);
           });
         });
       }, { threshold: 0.1 });
       faqIo.observe(faqAcc);
-      setTimeout(() => items.forEach((el) => { el.style.transition = "none"; el.style.opacity = "1"; el.style.transform = "none"; }), 1400);
+      // fail-open: garante visibilidade mesmo se o IO não disparar
+      setTimeout(() => {
+        faqAcc.classList.remove("js-stagger");
+        items.forEach((el) => el.classList.add("is-revealed"));
+      }, 1400);
     }
   }
 

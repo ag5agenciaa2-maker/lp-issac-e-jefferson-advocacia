@@ -5,6 +5,9 @@
    Sem dependências externas
    ========================================================== */
 
+/* PageSpeed fix: trava o scroll do body via classList em vez de style inline (evita forced reflow) */
+body.ck-modal-open { overflow: hidden; }
+
 :root {
     /* ── Cores principais (sincronizadas com o projeto Isaac & Jefferson) ── */
     --ck-bg: #121212;
@@ -144,7 +147,7 @@
     transition: all var(--ck-transition);
     white-space: nowrap;
     line-height: 1;
-    min-height: 30px;
+    min-height: 44px; /* Accessibility fix: touch target minimo 44x44px */
     letter-spacing: 0.1px;
 }
 
@@ -161,21 +164,23 @@
 }
 
 /* Outline — Borda sutil */
+/* Accessibility fix: contraste WCAG 4.5:1 (era ~0.38/0.28, reprovado) */
 .ck-btn--outline {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: rgba(255, 255, 255, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.78);
 }
 
 .ck-btn--outline:hover {
-    border-color: rgba(255, 255, 255, 0.28);
-    color: rgba(255, 255, 255, 0.65);
+    border-color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.95);
 }
 
 /* Ghost — Link underline */
+/* Accessibility fix: contraste WCAG 4.5:1 (era 0.3, reprovado) */
 .ck-btn--ghost {
     background: transparent;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.78);
     border: none;
     padding: 0.38rem 0.4rem;
     text-decoration: underline;
@@ -265,6 +270,13 @@
     cursor: pointer;
     flex-shrink: 0;
     transition: all var(--ck-transition);
+    position: relative;
+}
+/* Accessibility fix: touch target minimo 44x44px via pseudo-elemento invisivel, sem alterar o tamanho visual do botao */
+.ck-modal__close::before {
+    content: "";
+    position: absolute;
+    inset: -9px;
 }
 
 .ck-modal__body {

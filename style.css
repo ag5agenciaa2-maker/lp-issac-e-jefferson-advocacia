@@ -800,6 +800,17 @@ body.area-modal-open { overflow: hidden; }
 .faq-acc .acc__item:hover { border-color: var(--gold); transform: translateX(4px); }
 .faq-acc .acc__item.is-open { border-color: var(--gold); background: #fffdf8; box-shadow: 0 12px 32px rgba(169, 132, 60, 0.12); }
 .faq-acc .acc__item.is-open:hover { transform: none; }
+
+/* PageSpeed fix: stagger de entrada do FAQ via classe CSS (evita forced reflow por style inline) */
+.faq-acc.js-stagger .acc__item {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 450ms ease-out, transform 450ms ease-out;
+}
+.faq-acc.js-stagger .acc__item.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
 .faq__btn {
   width: 100%;
   background: none;
@@ -913,15 +924,50 @@ body.area-modal-open { overflow: hidden; }
   border: 1px solid transparent;
   transition: border-color 450ms ease;
 }
-.team__card img {
+.team__slides { position: relative; width: 100%; height: clamp(420px, 56vw, 620px); }
+.team__slides img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: clamp(420px, 56vw, 620px);
+  height: 100%;
   object-fit: cover;
   object-position: 50% 15%;
   filter: grayscale(1) contrast(1.05);
-  transition: filter 700ms ease, transform 1100ms var(--ease-out-expo);
+  transition: filter 700ms ease, transform 1100ms var(--ease-out-expo), opacity 500ms ease;
   display: block;
+  opacity: 0;
+  pointer-events: none;
 }
+.team__slides img.is-active { opacity: 1; pointer-events: auto; }
+
+.team__dots {
+  position: absolute;
+  bottom: clamp(22px, 3vw, 32px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+}
+.team__dots button {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--paper-30);
+  transition: background-color 300ms ease, transform 300ms ease;
+  cursor: default;
+}
+.team__dots button.is-active { background-color: var(--gold); transform: scale(1.3); }
+/* Accessibility fix: touch target minimo 44x44px via pseudo-elemento invisivel, sem alterar o layout visual dos dots */
+.team__dots button::before {
+  content: "";
+  position: absolute;
+  inset: -19px;
+}
+.team__card:hover .team__dots,
+.team__card:focus-within .team__dots { opacity: 0; }
 
 .team__num {
   position: absolute;
@@ -977,8 +1023,8 @@ body.area-modal-open { overflow: hidden; }
 .team__card:focus-within {
   border-color: var(--gold);
 }
-.team__card:hover img,
-.team__card:focus-within img { filter: grayscale(0.4) contrast(1.1); transform: scale(1.05); }
+.team__card:hover .team__slides img.is-active,
+.team__card:focus-within .team__slides img.is-active { filter: grayscale(0.4) contrast(1.1); transform: scale(1.05); }
 .team__card:hover .team__num,
 .team__card:focus-within .team__num { opacity: 0; }
 .team__card:hover .team__panel,
@@ -991,7 +1037,7 @@ body.area-modal-open { overflow: hidden; }
 
 /* toque (sem hover fino): painel sempre aberto, sem depender de interação */
 @media (hover: none) {
-  .team__card img { filter: grayscale(0.4) contrast(1.1); }
+  .team__slides img.is-active { filter: grayscale(0.4) contrast(1.1); }
   .team__num { display: none; }
   .team__panel { transform: translateY(0); }
   .team__oab, .team__focus, .team__link { opacity: 1; transform: none; }
